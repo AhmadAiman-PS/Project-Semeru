@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 236260549}
   - component: {fileID: 236260548}
   - component: {fileID: 236260547}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 236260546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3839, y: -2.78, z: 0}
+  m_LocalPosition: {x: -0.32, y: -2.24, z: 0}
   m_LocalScale: {x: 15.172829, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -283,7 +283,7 @@ Transform:
   m_GameObject: {fileID: 1816161453}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.008726558, z: 0, w: 0.999962}
-  m_LocalPosition: {x: 0.5, y: 0, z: 0}
+  m_LocalPosition: {x: 0.028, y: -0.018, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -400,7 +400,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff9d77167c561844f986abb24f90791d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  moveSpeed: 5
+  moveSpeed: 8
+  jumpForce: 12
+  inAirMoveMultiplier: 0.65
+  groundCheckDistance: 1.74
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1943339737
 Transform:
   m_ObjectHideFlags: 0
@@ -430,9 +436,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDamping: 0
+  m_LinearDamping: 0.1
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -478,8 +484,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.4302604, y: 0.106104255}
-  m_Size: {x: 0.93731385, y: 3.0448954}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.9, y: 3}
   m_Direction: 0
 --- !u!1 &2019159847
 GameObject:
